@@ -1,23 +1,58 @@
 aid: aracan
+
 name: Aracan
-description: 'Aracan is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Aracan is a Nagoya, Aichi, Japan‑based company founded in 2019 that operates an e‑commerce platform dedicated to online and offline car‑sharing and vehicle matching services. The organization provides a digital marketplace designed to connect individual car owners with prospective drivers, facilitating secure peer‑to‑peer automotive transactions across the country. It competes with services such as GO2GO and Anyca, offering a platform for professionally inspected used cars and enabling users to buy, sell, or rent vehicles through its online flea market.'
+
 url: https://raw.githubusercontent.com/api-evangelist/aracan/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-25'
+
 modified: '2026-09-25'
+
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: Access to https://aracan.co.jp returns HTTP 403 Forbidden, blocking documentation.
+  evidence:
+    - url: https://aracan.co.jp
+      status: 403
+  checked: 2026-09-25
+
 tags:
 - Company
-apis: []
+- Automotive
+- Marketplace
+- CarSharing
+- Japan
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/aracan-hosts.yml
+- type: DomainSecurity
+  url: security/aracan-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/aracan
+  url: https://aracan.co.jp
+
+apis: []
+x-enrichment:
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 4
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
